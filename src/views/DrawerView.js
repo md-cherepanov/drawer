@@ -116,11 +116,7 @@ export default class DrawerView extends React.PureComponent {
         onDrawerClose={this._handleDrawerClose}
         useNativeAnimations={this.props.navigationConfig.useNativeAnimations}
         renderNavigationView={this._renderNavigationView}
-        drawerPosition={
-          this.props.navigationConfig.drawerPosition === 'right'
-            ? DrawerLayout.positions.Right
-            : DrawerLayout.positions.Left
-        }
+        drawerPosition={this.props.navigationConfig.drawerPosition || "left"}
       >
         <SceneView
           navigation={descriptor.navigation}
